@@ -1,0 +1,19 @@
+{
+  "name": "workshop",
+  "version": "1.0.0",
+  "description": "musicxip workshop",
+  "devDependencies": {
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.4.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "scripts": {
+    "build": "webpack -p",
+    "dev-21": "webpack --config webpack-21.config.js --devtool cheap-module-source-map --watch --watch-poll",
+    "dev": "webpack --devtool cheap-module-source-map --watch --watch-poll"
+  }
+}

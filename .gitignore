@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+node_modules
+step2/node_modules
+step3/node_modules
+step4/node_modules
+
+step2/build
+step3/build
+step4/build

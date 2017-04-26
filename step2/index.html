@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Workshop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="corner"></div>
+<h1>New Track</h1>
+<form id="form" class="form" method="post" action="#" autocomplete="off">
+    <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required minlength="3" maxlength="10">
+    </div>
+    <div class="field">
+        <label for="genre">Genre</label>
+        <div class="select">
+            <select name="genre" id="genre" required>
+                <option value="0">Choose genre</option>
+                <option value="1">Punk</option>
+                <option value="2">Pop</option>
+                <option value="3">Electronic</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="js/validator.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
