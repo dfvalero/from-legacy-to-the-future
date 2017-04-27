@@ -36,3 +36,7 @@ npm install --save normalize.css
 npm run build-22
 ```
 ## 2.3 Global code to Scoped Code
+- Talk about REM Pattern, and rem units (change body font-size to see the example).
+- Move CSS to components.
+- Changing CSS convention breaks Javascript, talk about that.
+- Move Javascript to components (Same CSS components).

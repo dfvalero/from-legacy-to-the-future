@@ -43,25 +43,27 @@ var showNotification = function(message) {
     }, time);
 };
 
-$form.attr('novalidate', true);
+$(document).ready( function() {
+    $form.attr('novalidate', true);
 
-$form.on('keydown change', 'input, select', function() {
-    $(this).parents('.field').first().find('.error').remove();
-    enableSubmit();
-});
+    $form.on('keydown change', 'input, select', function() {
+        $(this).parents('.field').first().find('.error').remove();
+        enableSubmit();
+    });
 
-$form.on('submit', function() {
-    var errors = new Validator().validate($form);
-    var errorsSize = Object.keys(errors).length;
+    $form.on('submit', function() {
+        var errors = new Validator().validate($form);
+        var errorsSize = Object.keys(errors).length;
 
-    cleanErrors($form);
+        cleanErrors($form);
 
-    if(errorsSize) {
-        showErrors($form, errors);
-    } else {
-        $form.trigger('reset');
-        showNotification('Saved!');
-    }
+        if(errorsSize) {
+            showErrors($form, errors);
+        } else {
+            $form.trigger('reset');
+            showNotification('Saved!');
+        }
 
-    return false;
+        return false;
+    });
 });

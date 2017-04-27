@@ -1,7 +1,10 @@
 var $ = require('jquery');
 var Validator = require('./validator');
 
-require('../css/22.css');
+require('../css/23.css');
+require('./components/corner.js');
+require('./components/form.js');
+require('./components/notification.js');
 
 var $form = $('#form');
 var $submit = $form.find('[type="submit"]');
@@ -16,20 +19,20 @@ var showErrors = function($form, errors) {
         if(errors[form[i].name]) {
             var error = errors[form[i].name][0];
 
-            var $error = $('<div>').attr({class: 'error'}).text(error);
+            var $error = $('<div>').attr({class: 'form__error'}).text(error);
 
-            $error.appendTo($(form[i]).parents('.field').first());
+            $error.appendTo($(form[i]).parents('.form__field').first());
             $submit.attr('disabled', 'true');
         }
     }
 };
 
 var cleanErrors = function($form) {
-    $form.find('.error').remove();
+    $form.find('.form__error').remove();
 };
 
 var enableSubmit = function() {
-    if(!$form.find('.error').length) {
+    if(!$form.find('.form__error').length) {
         $submit.removeAttr('disabled');
     }
 };
@@ -45,25 +48,27 @@ var showNotification = function(message) {
     }, time);
 };
 
-$form.attr('novalidate', true);
+$(document).ready( function() {
+    $form.attr('novalidate', true);
 
-$form.on('keydown change', 'input, select', function() {
-    $(this).parents('.field').first().find('.error').remove();
-    enableSubmit();
-});
+    $form.on('keydown change', 'input, select', function() {
+        $(this).parents('.field').first().find('.error').remove();
+        enableSubmit();
+    });
 
-$form.on('submit', function() {
-    var errors = new Validator().validate($form);
-    var errorsSize = Object.keys(errors).length;
+    $form.on('submit', function() {
+        var errors = new Validator().validate($form);
+        var errorsSize = Object.keys(errors).length;
 
-    cleanErrors($form);
+        cleanErrors($form);
 
-    if(errorsSize) {
-        showErrors($form, errors);
-    } else {
-        $form.trigger('reset');
-        showNotification('Saved!');
-    }
+        if(errorsSize) {
+            showErrors($form, errors);
+        } else {
+            $form.trigger('reset');
+            showNotification('Saved!');
+        }
 
-    return false;
+        return false;
+    });
 });
