@@ -16,7 +16,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'jquery': path.resolve(__dirname, 'node_modules/jquery/src/jquery')
+            'jquery': path.resolve(__dirname, 'node_modules/jquery/src/jquery'),
+            'event-emitter': path.resolve(__dirname, 'node_modules/event-emitter/index')
         }
     },
     module: {

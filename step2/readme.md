@@ -40,3 +40,10 @@ npm run build-22
 - Move CSS to components.
 - Changing CSS convention breaks Javascript, talk about that.
 - Move Javascript to components (Same CSS components).
+    - Explain how hard is to deal with events.
+    - Need of a Bus to talk between components.
+    ```
+    npm install event-emitter --save
+    ```
+    - Nothing is reactive, you have to create all the reactivity.
+    - Components are scoped but not clear (DOM manipulation and business logic mixed).
