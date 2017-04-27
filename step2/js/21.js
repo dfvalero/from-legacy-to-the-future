@@ -51,7 +51,6 @@ $form.on('keydown change', 'input, select', function() {
 });
 
 $form.on('submit', function() {
-    console.log('submit');
     var errors = new Validator().validate($form);
     var errorsSize = Object.keys(errors).length;
 

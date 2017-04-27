@@ -27,6 +27,10 @@ npm install css-loader style-loader --save-dev
 ```
 npm install extract-text-webpack-plugin --save-dev
 ```
+- Create app file, install dependencies (normalize.css) and import it
+```
+npm install --save normalize.css
+```
 - Build
 ```
 npm run build-22
