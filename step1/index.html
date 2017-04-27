@@ -32,5 +32,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="js/validator.js"></script>
     <script src="js/app.js"></script>
+    <script type="text/javascript" >
+        $(document).ready( function() {
+            var $form = $('#form');
+
+            $form.attr('novalidate', true);
+
+            $form.on('keydown change', 'input, select', function() {
+                $(this).parents('.field').first().find('.error').remove();
+                enableSubmit();
+            });
+
+            $form.on('submit', function() {
+                var errors = new Validator().validate($form);
+                var errorsSize = Object.keys(errors).length;
+
+                cleanErrors($form);
+
+                if(errorsSize) {
+                    showErrors($form, errors);
+                } else {
+                    $form.trigger('reset');
+                    showNotification('Saved!');
+                }
+
+                return false;
+            });
+        });
+    </script>
 </body>
 </html>

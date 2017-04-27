@@ -40,25 +40,3 @@ var showNotification = function(message) {
     }, time);
 };
 
-$form.attr('novalidate', true);
-
-$form.on('keydown change', 'input, select', function() {
-    $(this).parents('.field').first().find('.error').remove();
-    enableSubmit();
-});
-
-$form.on('submit', function() {
-    var errors = new Validator().validate($form);
-    var errorsSize = Object.keys(errors).length;
-
-    cleanErrors($form);
-
-    if(errorsSize) {
-        showErrors($form, errors);
-    } else {
-        $form.trigger('reset');
-        showNotification('Saved!');
-    }
-
-    return false;
-});

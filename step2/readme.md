@@ -13,7 +13,7 @@ npm install jquery --save
 - NPM Scripts
 - Module exports (validator.js)
 
-## 2.1 Webpack Configuration - CSS and Loaders
+## 2.2 CSS and Loaders
 
 - Add CSS Loaders
 ```
