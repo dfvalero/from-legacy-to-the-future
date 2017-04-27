@@ -8,6 +8,7 @@
 - Easy to overwrite variables, methods.
 - CSS not clear and not scoped.
 - No clear entry points.
+- No controlled scripts all over the place.
 
 ## Pros
 

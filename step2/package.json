@@ -13,8 +13,9 @@
   },
   "scripts": {
     "build": "webpack -p",
+    "build-21": "webpack --config webpack-21.config.js",
+    "build-22": "webpack --config webpack-22.config.js",
     "dev-21": "webpack --config webpack-21.config.js --devtool cheap-module-source-map --watch --watch-poll",
-    "dev-22": "webpack --config webpack-22.config.js --devtool cheap-module-source-map --watch --watch-poll",
-    "dev": "webpack --devtool cheap-module-source-map --watch --watch-poll"
+    "dev-22": "webpack --config webpack-22.config.js --devtool cheap-module-source-map --watch --watch-poll"
   }
 }

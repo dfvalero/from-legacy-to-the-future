@@ -12,6 +12,10 @@ npm install jquery --save
 ```
 - NPM Scripts
 - Module exports (validator.js)
+- Build
+```
+npm run build-21
+```
 
 ## 2.2 CSS and Loaders
 
@@ -23,5 +27,8 @@ npm install css-loader style-loader --save-dev
 ```
 npm install extract-text-webpack-plugin --save-dev
 ```
-
+- Build
+```
+npm run build-22
+```
 ## 2.3 Global code to Scoped Code
