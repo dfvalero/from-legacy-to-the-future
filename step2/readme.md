@@ -47,3 +47,7 @@ npm run build-22
     ```
     - Nothing is reactive, you have to create all the reactivity.
     - Components are scoped but not clear (DOM manipulation and business logic mixed).
+-Build
+```
+npm run build-23
+```

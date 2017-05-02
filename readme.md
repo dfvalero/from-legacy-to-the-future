@@ -6,4 +6,4 @@
 
 ## [Step 3 - Vue and ECMAScript2015](step3/readme.md)
 
-## [Step 4 - Final Steps](step4/readme.md)
+## [Step 4 - Next Steps](step4/readme.md)
