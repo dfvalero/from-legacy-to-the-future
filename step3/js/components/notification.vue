@@ -13,24 +13,18 @@
 </style>
 
 <template>
-    <div class="notification" v-if="text">{{ text }}</div>
+    <div class="notification">{{ message }}</div>
 </template>
 
 <script>
-    export default {
-        props: ['message'],
-        data: () => {
-            return {
-                text: '',
-                delay: 1000
-            }
-        },
-        created() {
-            this.text = this.message;
+    let delay = 1000;
 
+    export default {
+        props: ['id', 'message'],
+        created() {
             setTimeout(() => {
-                this.text = '';
-            }, this.delay);
+                this.$emit('remove', this.id);
+            }, delay);
         }
     }
 </script>

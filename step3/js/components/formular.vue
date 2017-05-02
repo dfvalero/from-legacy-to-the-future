@@ -72,8 +72,8 @@
             return {
                 form: new Form(
                     {
-                        name: '',
-                        genre: 0
+                        name: '123',
+                        genre: 1
                     },
                     {
                         name: 'required|min:3|max:10',
