@@ -11,13 +11,13 @@ var Corner = function($scope) {
     function _append($element) {
         $element.appendTo($scope);
 
-        setInterval(function() {
+        setTimeout(function() {
             $element.remove();
         }, _settings.delay);
     }
 
     function init() {
-        bus.on('add.to.corner', _append);
+        bus.on('Bus', _append);
     }
 
     return {

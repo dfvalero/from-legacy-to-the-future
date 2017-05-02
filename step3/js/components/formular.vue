@@ -65,6 +65,7 @@
 
 <script>
     import Form from '../models/form';
+    import { Bus } from '../bus';
 
     export default {
         data: () => {
@@ -89,7 +90,7 @@
                 });
             },
             onSuccess() {
-                console.log('Append notification!');
+                Bus.$emit('add.notification', 'Saved!');
             },
             onFail() {
                 console.log('Form has errors!');
